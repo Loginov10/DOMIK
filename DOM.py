@@ -17,22 +17,34 @@ r=random.randint(0,255)
 g=random.randint(0,255)
 b=random.randint(0,255)
 majavarv=[r,g,b]
-#funktsioonid
-def Maja(x,y,width,height,screen,color):
-    points=[(x,y- ((3/4.0) * height)), (x,y), (x+width,y), (x+width,y-(3/4.0)* height),(x,y- ((3/4.0) * height)), (x+width/2.0,y-height), (x+width,y-(3/4.0)*height)]
-    suurus=random.randint(1,10)
-    pygame.draw.lines(screen,color,False,points,suurus)
 
-def Uks(x,y,laius,kõrgus,screen,color):
-    punktid=[(x,y),(x,y-(1/2)*kõrgus),(x+(1/3)*laius,y-(1/2)*kõrgus),(x+(1/3)*laius,y),(x,y)]
-    suurus=random.randint(1,10)
-    pygame.draw.lines(screen,color,False,punktid,suurus)
+def Maja(x,y,width,height,screen,color):
+    while True:
+        points=[(x,y- ((3/4.0) * height)), (x,y), (x+width,y), (x+width,y-(3/4.0)* height),(x,y- ((3/4.0) * height)), (x+width/2.0,y-height), (x+width,y-(3/4.0)*height)]
+        suurus=random.randint(1,10)
+        pygame.draw.lines(screen,color,False,points,suurus)
+        pygame.display.flip()
+
+def Uks(x,y,laius,kõrgus,pind,värv):
+    while True:
+        punktid=[(x,y),(x,y-(1/2)*kõrgus),(x+(1/3)*laius,y-(1/2)*kõrgus),(x+(1/3)*laius,y),(x,y)]
+        suurus=random.randint(1,10)
+        pygame.draw.lines(pind,värv,True,punktid,suurus)
+        pygame.display.flip()
 
 def Aken(x,y,laius,kõrgus,screen,color):
-    punktid=[(x,y-(1/2)*kõrgus),(x,y),(x,y),(x,y)]
-    suurus=random.randint(1,10)
-    pygame.draw.lines(screen,color,False,punktid,suurus)
-#kutsun funktsiooni välja
+    while True:
+        punktid=[(x,y-(1/2)*kõrgus),(x,y),(x,y),(x,y)]
+        suurus=random.randint(1,10)
+        pygame.draw.lines(screen,color,False,punktid,suurus)
+        pygame.display.flip()
+
 Maja(100,400,500,400,pind,majavarv)
 Uks(100,400,500,400,pind,majavarv)
-pygame.display.flip()
+
+
+while True:
+    event=pygame.event.poll()
+    if event.type==pygame.QUIT:
+        sys.exit()
+pygame.quit()
