@@ -39,6 +39,9 @@ def Aken(x,y,laius,kõrgus,screen,color):
     pygame.draw.lines(screen,color,False,punktid,suurus)
     pygame.display.flip()
 
+ovaal1=pygame.Rect(230,280,20,20)
+pygame.draw.ellipse(pind,(252,252,252),ovaal1)
+
 Maja(100,400,500,400,pind,majavarv)
 Uks(100,400,500,400,pind,majavarv)
 Aken(400,300,250,200,pind,majavarv)
