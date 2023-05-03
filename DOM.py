@@ -42,6 +42,10 @@ def Aken(x,y,laius,kõrgus,screen,color):
 ovaal1=pygame.Rect(230,280,20,20)
 pygame.draw.ellipse(pind,(252,252,252),ovaal1)
 
+ristkülik=pygame.Rect(0,400,640,180)
+pygame.draw.rect(pind,(94, 173, 85),ristkülik)
+
+
 Maja(100,400,500,400,pind,majavarv)
 Uks(100,400,500,400,pind,majavarv)
 Aken(400,300,250,200,pind,majavarv)
@@ -51,4 +55,3 @@ while True:
     if event.type==pygame.QUIT:
         sys.exit()
 pygame.quit()
-
